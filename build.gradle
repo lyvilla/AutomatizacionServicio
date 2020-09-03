@@ -1,0 +1,73 @@
+defaultTasks 'clean', 'test', 'aggregate'
+
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java-library'
+apply plugin: 'org.sonarqube'
+
+repositories {
+    maven { url "http://insecure.repo1.maven.org/maven2" }
+    jcenter()
+}
+
+buildscript {
+    repositories {
+        maven { url "http://insecure.repo1.maven.org/maven2" }
+        jcenter()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.2.13")
+        classpath("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.0")
+        classpath("net.serenity-bdd:serenity-single-page-report:2.1.4")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
+apply from: "$rootDir/gradle/libraries.gradle"
+
+
+configurations.all {
+    resolutionStrategy {
+        force "io.cucumber:cucumber-core:${cucumberVersion}"
+    }
+}
+sonarqube {
+    properties {
+        property "sonar.sourceEncoding", "UTF-8"
+    }
+}
+serenity {
+    reports = ["single-page-html"]
+}
+dependencies {
+
+    compile libs.test.cucumber.junit,
+            libs.test.cucumber.java,
+            libs.test.cucumber.core,
+            libs.test.serenity.core,
+            libs.test.serenity.rest,
+            libs.test.serenity.screenplay,
+            libs.test.serenity.junit,
+            libs.test.serenity.screenplayWebdriver,
+            libs.test.serenity.cucumber,
+            libs.test.junit,
+            libs.test.assertj,
+            libs.slf4jApi,
+            libs.test.jackson
+
+    compile group: 'org.json', name: 'json', version: '20200518'
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.11.2'
+
+}
+
+test {
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+}
+
+gradle.startParameter.continueOnFailure = true
+
+test.finalizedBy(aggregate)
