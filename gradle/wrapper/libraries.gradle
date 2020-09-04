@@ -26,7 +26,6 @@ ext {
                     ],
                     junit   : "junit:junit:${junitVersion}",
                     assertj : "org.assertj:assertj-core:${assertJVersion}",
-                    jackson : "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:${jacksonVersion}"
 
             ]
     ]

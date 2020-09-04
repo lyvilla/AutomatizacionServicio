@@ -1,13 +1,17 @@
 package co.com.qvision.certificacion.regres.models;
 
+
+import co.com.qvision.certificacion.regres.models.builders.RegistrarUsuarioBuilder;
+
 public class RegistrarUsuario {
 
     private String nombre;
     private String trabajo;
 
-    public RegistrarUsuario(String nombre, String trabajo) {
-        this.nombre = nombre;
-        this.trabajo = trabajo;
+
+    public RegistrarUsuario (RegistrarUsuarioBuilder builder){
+        nombre=builder.getNombre();
+        trabajo=builder.getTrabajo();
     }
 
     public String getNombre() {
@@ -17,4 +21,9 @@ public class RegistrarUsuario {
     public String getTrabajo() {
         return trabajo;
     }
+
+
+
+
+
 }

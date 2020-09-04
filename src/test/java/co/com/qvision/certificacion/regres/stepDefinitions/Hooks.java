@@ -4,9 +4,9 @@ import io.cucumber.java.Before;
 import io.cucumber.java.es.Dado;
 import net.serenitybdd.core.environment.EnvironmentSpecificConfiguration;
 import net.serenitybdd.screenplay.actors.OnStage;
+import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 import net.thucydides.core.util.EnvironmentVariables;
-import net.serenitybdd.screenplay.actors.OnlineCast;
 
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 
@@ -22,6 +22,6 @@ public class Hooks {
 
     @Dado("que se haya ingresado el endpoint del servicio")
     public void queSeHayaIngresadoElEndpointDelServicio() {
-        theActorCalled("juan").whoCan(CallAnApi.at(endpoint));
+        theActorCalled("Juan").whoCan(CallAnApi.at(endpoint));
     }
 }
