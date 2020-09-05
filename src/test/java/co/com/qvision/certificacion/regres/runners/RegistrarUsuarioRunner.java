@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
 
 @RunWith(CucumberWithSerenity.class)
-@CucumberOptions(features = "src/test/resources/feature/registrar_usuario.feature"
+@CucumberOptions(features = "src/test/resources/features/registrar_usuario.feature"
         , glue = {"co/com/qvision/certificacion/regres/stepDefinitions",}
         //, tags = "@laboratorio or @validacionDeCampos"
         //, tags = "@produccion"

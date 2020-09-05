@@ -10,7 +10,7 @@ Característica: Registrar usuario
   @crearUsuario
   Esquema del escenario: Crear usuario
     Cuando el usuario '<nombre>' ingrese su trabajo '<trabajo>'
-    Entonces el usuario verá la información guardada exitosamente '<respuesta>'
+    Entonces el usuario '<nombre>' verá el trabajo '<trabajo>' creado exitosamente con la respuesta '<respuesta>'
 
     @desarrollo
     Ejemplos: Registrar usuario

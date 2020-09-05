@@ -1,0 +1,21 @@
+package co.com.qvision.certificacion.regres.utils;
+
+public enum CodigoDeRespuesta {
+    OK(201,"HTTP/1.1 201 Created");
+
+    private int codigo;
+    private String mensaje;
+
+    CodigoDeRespuesta(int codigo, String mensaje) {
+        this.codigo = codigo;
+        this.mensaje = mensaje;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public String getMensaje() {
+        return mensaje;
+    }
+}
