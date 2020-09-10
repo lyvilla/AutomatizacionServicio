@@ -10,7 +10,7 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
 @CucumberOptions(features = "src/test/resources/features/registrar_usuario.feature"
         , glue = {"co/com/qvision/certificacion/regres/stepDefinitions",}
         //, tags = "@laboratorio or @validacionDeCampos"
-        //, tags = "@produccion"
+       // , tags = "@crearUsuario"
         , snippets = CAMELCASE)
 
 public class RegistrarUsuarioRunner {

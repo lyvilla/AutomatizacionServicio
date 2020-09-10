@@ -17,7 +17,19 @@ Característica: Registrar usuario
       | nombre | trabajo | respuesta |
       | morfeo | líder   | OK        |
 
-    @laboratorio
+
+
+  @loguearse
+  Esquema del escenario: Loguearse
+    Cuando el usuario inicie sesión erroneamente
+      | email   | contrasena   |
+      | <email> | <contrasena> |
+    Entonces el usuario vera el mensaje de error '<mensajeError>'
+
+    @desarrollo
     Ejemplos: Registrar usuario
-      | nombre | trabajo   | respuesta |
-      | Juan   | ingeniero | OK        |
+      | email              | contrasena | mensajeError |
+      | eve.holt@reqres.in | pistola    | BAD_REQUEST  |
+
+
+
