@@ -18,7 +18,6 @@ Característica: Registrar usuario
       | morfeo | líder   | OK        |
 
 
-
   @loguearse
   Esquema del escenario: Loguearse
     Cuando el usuario inicie sesión erroneamente

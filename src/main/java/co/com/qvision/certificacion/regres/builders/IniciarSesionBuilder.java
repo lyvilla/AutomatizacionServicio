@@ -10,11 +10,12 @@ public class IniciarSesionBuilder implements IBuilderIniciarSesion {
 
     public IniciarSesionBuilder(String email) {
         this.email = email;
-    }
+    }// constructor
 
     public static IniciarSesionBuilder email(String email) {
         return new IniciarSesionBuilder(email);
     }
+
     public IniciarSesionModel yClave(String contrasena) {
         this.contrasena = contrasena;
         return this.build();

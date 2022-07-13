@@ -14,8 +14,8 @@ public class RegistrarUsuarioBuilder implements IBuilderRegistrarUsuario {
     }
 
     public static RegistrarUsuarioBuilder nombre(String nombre) {
-        return new RegistrarUsuarioBuilder(nombre);
-
+        return new RegistrarUsuarioBuilder(nombre);//se inicializa la clase builder, es obligatorio para incializarlo
+//instancia la clase
     }
 
     public RegistrarUsuarioModel yTrabajo(String trabajo) {
@@ -29,5 +29,5 @@ public class RegistrarUsuarioBuilder implements IBuilderRegistrarUsuario {
         registrar.setNombre(this.nombre);
         registrar.setTrabajo(this.trabajo);
         return registrar;
-    }
+    }// esta sobreescribiendo la interfaz
 }

@@ -17,12 +17,12 @@ public class Hooks {
 
     @Before
     public void set_the_stage() {
-        endpoint = EnvironmentSpecificConfiguration.from(environmentVariables).getProperty(ENDPOINT_REGRES);
-        OnStage.setTheStage(new OnlineCast());
+        endpoint = EnvironmentSpecificConfiguration.from(environmentVariables).getProperty(ENDPOINT_REGRES); // SE LLAMA LAS VARIABLES QUE ESTAN EN EL SERENITY.CONF
+        OnStage.setTheStage(new OnlineCast()); //Y SE INICIALIZA EL ACTOR
     }
 
-    @Dado("que se haya ingresado el endpoint del servicio")
+    @Dado("que se haya ingresado el endpoint del servicio")// SIEMPRE ES UNA PRECONDICION DEL SERVICIO EL ENDPOINT
     public void queSeHayaIngresadoElEndpointDelServicio() {
-        theActorCalled("Juan").whoCan(CallAnApi.at(endpoint));
+        theActorCalled("Juan").whoCan(CallAnApi.at(endpoint));//el actor llamado juan quien puede llamar un api y se la pasa el endpoint
     }
 }

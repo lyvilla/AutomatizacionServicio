@@ -28,7 +28,7 @@ public class RegistrarElUsuario implements Task {
                         .accept(ACCEPT)
                         .body(registrarUsuarioModel)
                         .relaxedHTTPSValidation()
-                        .urlEncodingEnabled(false)
+                        .urlEncodingEnabled(false)// para que no codifique la informacion que se le envia
                 ));
     }
 
