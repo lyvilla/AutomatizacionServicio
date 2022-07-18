@@ -10,6 +10,12 @@ repositories {
     jcenter()
 }
 
+sonarqube {
+    properties {
+        property "sonar.projectKey", "CapacitacionQvision"
+    }
+}
+
 buildscript {
     repositories {
         mavenCentral()
