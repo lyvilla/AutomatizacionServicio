@@ -6,19 +6,19 @@ apply plugin: 'java-library'
 apply plugin: 'org.sonarqube'
 
 repositories {
-    maven { url "http://insecure.repo1.maven.org/maven2" }
+    mavenCentral()
     jcenter()
 }
 
 buildscript {
     repositories {
-        maven { url "http://insecure.repo1.maven.org/maven2" }
+        mavenCentral()
         jcenter()
     }
     dependencies {
-        classpath("net.serenity-bdd:serenity-gradle-plugin:2.2.13")
-        classpath("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.0")
-        classpath("net.serenity-bdd:serenity-single-page-report:2.1.4")
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.4.34")
+        classpath("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.2.0")
+        classpath("net.serenity-bdd:serenity-single-page-report:2.4.48")
     }
 }
 
@@ -44,19 +44,20 @@ serenity {
 }
 dependencies {
 
-    compile libs.test.cucumber.junit,
+    compile libs.test.serenity.core,
+            libs.test.cucumber.junit,
             libs.test.cucumber.java,
             libs.test.cucumber.core,
-            libs.test.serenity.core,
-            libs.test.serenity.rest,
             libs.test.serenity.screenplay,
             libs.test.serenity.junit,
             libs.test.serenity.screenplayWebdriver,
             libs.test.serenity.cucumber,
             libs.test.junit,
+            libs.test.serenity.rest,
             libs.test.assertj,
             libs.slf4jApi,
-            libs.test.jackson
+            libs.test.jacksonDatatype,
+            libs.test.jacksonDataformat
 
     compile group: 'org.json', name: 'json', version: '20200518'
     compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.11.2'
