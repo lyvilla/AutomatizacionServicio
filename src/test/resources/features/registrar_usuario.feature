@@ -1,6 +1,6 @@
 #language: es
 #encoding: iso-8859-1
-#Author: jbuiles@qvision.com.co, lvilla@qvision.com.co
+
 Característica: Registrar usuario
   Yo quiero realizar el registro de un usuario
 

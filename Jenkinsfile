@@ -27,6 +27,13 @@ pipeline {
                 bat 'gradle clean test aggregate'
             }
         }
+
+        stage('jar') {
+            steps {
+                 echo 'Creando el jar...'
+                 bat 'gradlew fatJar'
+                    }
+                }
         
         stage('Publish report') {
             steps {
