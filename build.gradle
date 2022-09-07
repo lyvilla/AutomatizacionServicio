@@ -12,7 +12,7 @@ repositories {
 
 sonarqube {
     properties {
-        property "sonar.projectKey", "CapacitacionQvision"
+        property "sonar.projectKey", "proyectoejemplo"
         property "sonar.login", "squ_eb1bd6daa0a2c9af503f668923d36069e395a658"
         property "sonar.host.url", "http://localhost:9000"
     }
